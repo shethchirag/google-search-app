@@ -9,7 +9,9 @@ const Home = () => {
   const { searchQuery } = useContext(Context);
   const navigate = useNavigate();
   const searchQueryHandler = () => {
-    navigate(`/${searchQuery}/${1}`);
+    if (searchQuery.length > 0) {
+      navigate(`/${searchQuery}/${1}`);
+    }
   };
   return (
     <div className="h-[100vh] flex flex-col">
